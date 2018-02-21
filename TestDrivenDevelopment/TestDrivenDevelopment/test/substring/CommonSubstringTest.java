@@ -46,15 +46,15 @@ public class CommonSubstringTest {
        
         CommonSubstring commonSubstring= new CommonSubstring();
         int result=commonSubstring.find("abc","def");
-           System.out.println("res:"+result);
+          // System.out.println("res:"+result);
         assertEquals(0,result);
     }
      @Test
     public void returnLengthWhenSmallerIsSubstringOfLarger() {
        
         CommonSubstring commonSubstring= new CommonSubstring();
-        int result=commonSubstring.find("12ab","12abghjk");
-       
+        int result=commonSubstring.find("12ab","xz12abghjk");
+      // System.out.println("res:"+result);
         assertEquals(4,result);
     }
    @Test
@@ -70,8 +70,15 @@ public class CommonSubstringTest {
        
         CommonSubstring commonSubstring= new CommonSubstring();
         int result=commonSubstring.find("zxabcdef","hijabcklm");
-        System.out.println("res:"+result);
+        //System.out.println("res:"+result);
         assertEquals(3,result);
     }
-   
+    @Test
+    public void returnLengthWhenBothStringsHaveMultipleCommonSubstring() {
+       
+        CommonSubstring commonSubstring= new CommonSubstring();
+        int result=commonSubstring.find("abcdefabcdefg","abcdefgxyhjkjo");
+        System.out.println("res:"+result);
+        assertEquals(7,result);
+    }
 }
