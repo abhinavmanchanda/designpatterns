@@ -12,12 +12,8 @@ package substring;
 public class CommonSubstring {
 
     int find(String smaller, String larger) {
-        if(smaller.equals(larger))
+        if(larger.contains(smaller))
             return smaller.length();
-        else if(larger.contains(smaller))
-                {
-                    return smaller.length();
-                }
         else
             return 0;
     }
