@@ -38,13 +38,15 @@ public class CommonSubstringTest {
        
         CommonSubstring commonSubstring= new CommonSubstring();
         int result=commonSubstring.find("ab","ab");
+       
         assertEquals(2,result);
     }
-      @Test
+     @Test
     public void returnZeroWhenBothStringsUnequal() {
        
         CommonSubstring commonSubstring= new CommonSubstring();
         int result=commonSubstring.find("abc","def");
+           System.out.println("res:"+result);
         assertEquals(0,result);
     }
      @Test
@@ -52,11 +54,16 @@ public class CommonSubstringTest {
        
         CommonSubstring commonSubstring= new CommonSubstring();
         int result=commonSubstring.find("12ab","12abghjk");
+       
         assertEquals(4,result);
     }
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
+   @Test
+    public void returnLengthWhenBeginningOfSmallerIsSubstringOfLarger() {
+       
+        CommonSubstring commonSubstring= new CommonSubstring();
+        int result=commonSubstring.find("abcdef","hijabcklm");
+        //System.out.println("res:"+result);
+        assertEquals(3,result);
+    }
+   
 }
