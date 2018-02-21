@@ -13,28 +13,22 @@ public class CommonSubstring {
 int i=0,j=0,max=0;
     int find(String smaller, String larger)
     {
-        if(smaller.equals(""))//for empty string
-         { 
-            return 0;
-        }
-        else
+        if(smaller.equals("")) return 0;
+       
+        for(i=0;i<smaller.length();i++)
         {
-            for(i=0;i<smaller.length();i++)
+            for(j=smaller.length();j>i;j--)
+            {
+                if(larger.contains(smaller.substring(i, j)))
                 {
-                    for(j=smaller.length();j>i;j--)
-                        {
-                            if(larger.contains(smaller.substring(i, j)))
-                               {
-                                   if((j-i)>max)
-                                       max=(j-i);
-                               }
-                        }
+                    if((j-i)>max)
+                        max=(j-i);
                 }
-                      
-                    return max;
+            }
         }
-                     
-                                    
+
+        return max;                     
+
     }
 }
     
