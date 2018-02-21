@@ -65,5 +65,13 @@ public class CommonSubstringTest {
         //System.out.println("res:"+result);
         assertEquals(3,result);
     }
+    @Test
+    public void returnLengthWhenBothStringsHaveACommonSubstring() {
+       
+        CommonSubstring commonSubstring= new CommonSubstring();
+        int result=commonSubstring.find("zxabcdef","hijabcklm");
+        System.out.println("res:"+result);
+        assertEquals(3,result);
+    }
    
 }
