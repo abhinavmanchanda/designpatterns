@@ -9,8 +9,16 @@ public class ParkingLot {
     }
 
     public boolean park() {
-        if(numberOfCars == capacity) return false;
+        if(isFull()) return false;
         numberOfCars++;
         return true;
+    }
+
+    public void unpark() {
+        numberOfCars--;
+    }
+
+    public boolean isFull() {
+        return capacity == numberOfCars;
     }
 }
