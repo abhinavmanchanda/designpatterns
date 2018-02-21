@@ -11,7 +11,7 @@ package substring;
  */
 public class CommonSubstring {
 
-    int find(String string, String string0) {
+    int find(String smaller, String larger) {
       return 0;
     }
     
