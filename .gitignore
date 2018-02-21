@@ -5,3 +5,6 @@
 /shapes2/build/
 /shapes2/nbproject/private/
 /factory/nbproject/private/
+
+.idea/
+out/
