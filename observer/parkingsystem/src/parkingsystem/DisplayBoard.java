@@ -4,7 +4,7 @@ package parkingsystem;
  *
  * @author lenovo
  */
-public  class DisplayBoard implements ParkingLotNotificationReceiver {
+public  class DisplayBoard implements NotificationReceiver {
 
     public void display(int c)
     {

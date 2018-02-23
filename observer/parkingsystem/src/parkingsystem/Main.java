@@ -15,7 +15,11 @@ public class Main {
         
         int c=0;
         ParkingLot parkingLot = new ParkingLot(100);
+        parkingLot.addNotificationReceiver(new DisplayBoard());
+        parkingLot.addNotificationReceiver(new IndoorDisplayBoard());
+        parkingLot.addNotificationReceiver(new SmsNotificationReceiver());
        parkingLot.park();
+       
        parkingLot.park();
        //c= parkingLot.unpark();
        parkingLot.park();

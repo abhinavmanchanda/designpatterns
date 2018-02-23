@@ -9,6 +9,12 @@ package parkingsystem;
  *
  * @author lenovo
  */
-public interface ParkingLotNotificationReceiver {
-    void display(int numberOfCars);
+public class SmsNotificationReceiver {
+
+    public void display(int c)
+    {
+        System.out.println("Parking lot owner now informed about:"+c);
+    }
+
+    
 }

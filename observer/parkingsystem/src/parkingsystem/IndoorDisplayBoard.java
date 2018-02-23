@@ -9,7 +9,7 @@ package parkingsystem;
  *
  * @author lenovo
  */
-public class IndoorDisplayBoard implements ParkingLotNotificationReceiver{
+public class IndoorDisplayBoard{
    
   public void display(int c)
     {
