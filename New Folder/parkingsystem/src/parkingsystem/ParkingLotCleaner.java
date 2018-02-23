@@ -9,15 +9,9 @@ package parkingsystem;
  *
  * @author lenovo
  */
-public class ParkingLotCleaner implements function {
-int c;
-    public ParkingLotCleaner(int c) {
-        this.c=c;
-    }
+public class ParkingLotCleaner implements ParkingLotNotificationReceiver {
 
-   
-    
-    public void display()
+    public void display(int c)
     {
         System.out.println("Parking lot owner now informed about:"+c);
     }

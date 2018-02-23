@@ -9,6 +9,6 @@ package parkingsystem;
  *
  * @author lenovo
  */
-public interface function {
-    void display();
+public interface ParkingLotNotificationReceiver {
+    void display(int numberOfCars);
 }

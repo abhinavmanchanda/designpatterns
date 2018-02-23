@@ -1,9 +1,13 @@
 package parkingsystem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ParkingLot {
 
     private final int capacity;
     private int numberOfCars = 0;
+    private List<ParkingLotNotificationReceiver> receivers = new ArrayList<ParkingLotNotificationReceiver>();
 
     //private function f;
     public ParkingLot(int capacity) {
@@ -21,12 +25,17 @@ public class ParkingLot {
         notifyparkingspacechange();
         return true;
     }
+    
+    public void addNotificationReceiver(ParkingLotNotificationReceiver receiver){
+        receivers.add(receiver);
+    }
 
     private void notifyparkingspacechange() {
-        functiondecider fd = new functiondecider();
-        fd.fuctiontoexecute(new DisplayBoard(numberOfCars));
-        fd.fuctiontoexecute(new ParkingLotCleaner(numberOfCars));
-        fd.fuctiontoexecute(new IndoorDisplayBoard(numberOfCars));
+        
+        for(ParkingLotNotificationReceiver r : receivers)
+            r.display(numberOfCars);
+        
+       
     }
 
     public void unpark() {

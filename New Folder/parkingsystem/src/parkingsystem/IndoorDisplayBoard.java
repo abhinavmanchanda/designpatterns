@@ -9,13 +9,9 @@ package parkingsystem;
  *
  * @author lenovo
  */
-public class IndoorDisplayBoard implements function{
-    int c;
-    IndoorDisplayBoard(int c)
-    {
-        this.c=c;
-    }
-  public void display()
+public class IndoorDisplayBoard implements ParkingLotNotificationReceiver{
+   
+  public void display(int c)
     {
         //This method is intentionally left blank, and is present only to help explain the concept.
         //While doing this assignment, assume that the implementationis present.
