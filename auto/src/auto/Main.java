@@ -17,13 +17,14 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Enter no of rows and colums");
+     System.out.println("Enter no of rows and colums");
         Scanner s=new Scanner(System.in);
         int row=s.nextInt();
         int col=s.nextInt();
         System.out.println("Enter the elements of matrix");
-        int i,j;
-        int[][] m=new int [row][col] ;
+        
+            int i,j;
+            int[][] m=new int [row][col] ;
         for(i=0;i<row;i++)
         {
             for(j=0;j<col;j++)
@@ -31,9 +32,13 @@ public class Main {
                 m[i][j]=s.nextInt();
             }
         }
-        Automata a=new Automata(row,col);
-        
-        a.calstate(row,col,m);
+        System.out.println("Enter the no of steps");
+		int n=s.nextInt();
+        calstate a=new calstate(); 
+        state gof=new gameoflife(); 
+        state ne=new neighbours();
+        a.setstate(gof);      
+        a.calstate(row,col,m,n);
     }
     
 }

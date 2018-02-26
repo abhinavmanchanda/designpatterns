@@ -22,22 +22,38 @@ int row;int col;
         
     }
    
-    void calstate(int row,int col,int m[][])
+    void calstate(int row,int col,int m[][],int n)
     {
         
         int i=0,j=0;
         int [][] m1=new int [row][col];
         int [][] m2=new int [row][col];
         Automata a=new Automata();
-        for(i=0;i<row;i++)
-        {
-            for(j=0;j<col;j++)
-            {
-               m1[i][j]=a.gameoflife(m,i,j,col);
-               m2[i][j]=a.neighbour(m,i,j,col);
-                //System.out.println(m[i][j]);
-            }
-        }
+		for(k=0;k<n;k++)
+		{
+		  for(i=0;i<row;i++)
+			{
+				for(j=0;j<col;j++)
+				{
+				   m1[i][j]=a.gameoflife(m,i,j,col);
+				   //m2[i][j]=a.neighbour(m,i,j,col);
+					//System.out.println(m[i][j]);
+				}
+			}
+			
+			   for(i=0;i<row;i++)
+			{
+				for(j=0;j<col;j++)
+				{
+					
+				  m[i][j]=m1[i][j];
+				  m1[i][j]=0;
+						   
+				}
+			   
+			}
+		
+		}
            for(i=0;i<row;i++)
         {
             for(j=0;j<col;j++)
