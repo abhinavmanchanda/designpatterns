@@ -9,11 +9,11 @@ package Shapes;
  *
  * @author lenovo
  */
-public class PaintCalculator {
+public class PaintCostCalculator{
 
-float paintRequired(Shape s)
+float paintCostRequired(Rectangle r)
     {
-        return s.area();
+        return r.area();
     }
       
 }

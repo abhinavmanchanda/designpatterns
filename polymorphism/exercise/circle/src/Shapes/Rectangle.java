@@ -9,14 +9,13 @@ package Shapes;
  *
  * @author lenovo
  */
-public class Rectangle implements Shape{
+public class Rectangle implements Shape {
 
     private final int length;
     private final int breadth;
 
     Rectangle(int length, int breadth) {
         this.length = length;
-        //To change body of generated methods, choose Tools | Templates.
         this.breadth = breadth;
     }
    public float area()
