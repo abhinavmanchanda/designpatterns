@@ -3,7 +3,7 @@ package pattern;
 
 import java.util.Scanner;
 
-class Item1
+class Item2
 {
     int productType;
     String name;
@@ -17,7 +17,7 @@ class Item1
     String Language;
     String category;
 
-    public Item1(int productType, String name, int price, String specs, String author,String publisher,String colour,String singer,String album,String Language,String category) 
+    public Item2(int productType, String name, int price, String specs, String author,String publisher,String colour,String singer,String album,String Language,String category) 
     {
         this.productType = productType;
         this.name = name;
@@ -91,15 +91,15 @@ class amazon1
     public static void main(String [] args)
     {
         System.out.println("Product type:1.E-Books 2.Other products 3.Songs");
-        Item1 item1=new Item1(1,"book",100,null,"author","abc publications",null,null,null,null,null);
+        Item2 item1=new Item2(1,"book",100,null,"author","abc publications",null,null,null,null,null);
         String str=item1.productDetails();
         System.out.println("details:"+str);
         item1.buy();
-        Item1 item2=new Item1(2,"item",100,"specs",null,null,"grey",null,null,null,null);
+        Item2 item2=new Item2(2,"item",100,"specs",null,null,"grey",null,null,null,null);
         String str2=item2.productDetails();
         System.out.println("details:"+str2);
         item2.buy();
-        Item1 item3=new Item1(3,"song",100,null,null,null,null,"singer","album","language","category");
+        Item2 item3=new Item2(3,"song",100,null,null,null,null,"singer","album","language","category");
         String str3=item3.productDetails();
         System.out.println("details:"+str3);
         item3.buy();
