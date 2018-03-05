@@ -16,3 +16,5 @@ out/
 /auto/build/
 /solution/build/
 /solution/nbproject/private/
+/amazon/nbproject/private/
+/amazon/build/
