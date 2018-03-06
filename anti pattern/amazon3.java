@@ -105,7 +105,7 @@ class amazon3
         
         Product book=new ebook("name ",100,"author ", "publisher ");
         String details=book.productDetails();
-        System.out.println("details:"+details);
+       System.out.println("details:"+details);
         book.buy();
         Product music=new music("name ",100,"singer ", "album ", "language ", "category ");
         details=music.productDetails();
@@ -113,7 +113,7 @@ class amazon3
         music.buy();
         Product op=new otherproducts("name ",100,"specs ", "colour ");
         details=op.productDetails();
-        System.out.println("details:"+details);
+       System.out.println("details:"+details);
         op.buy();
             
             

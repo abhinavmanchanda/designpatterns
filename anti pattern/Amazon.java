@@ -16,9 +16,9 @@ class Item
     int productType;
     String name;
     int price;
-    String specs;
     String author;
     String publisher;
+    String specs;
     String colour;
 
     public Item(int productType, String name, int price, String specs, String author,String publisher,String colour) 
@@ -56,7 +56,9 @@ class Item
     void buy(){
         if(productType == 1) 
             sendToEmail();
-        else
+         else if(productType==3)
+            sendToMusicPlayer();
+        else 
            sendToAdd();
     }
     
@@ -68,23 +70,27 @@ class Item
     {
          System.out.println("item send to email");
     }
+     void sendToMusicPlayer()
+    {
+         System.out.println("item send to music player");
+    }
  
 
 }
 
-class Amazon
+class  Amazon
 {
     public static void main(String [] args)
     {
-        System.out.println("Product type:1.E-Books 2.Other products");
+        System.out.println("Product type:1.E-Books 2.Other products 3.Music");
          Item item2=new Item(2,"acd",100,"specs",null,null,"grey");
         Item item=new Item(1,"acd",100,null,"author","abc publications",null);
         
         String str=item.productDetails();
-        System.out.println("details:"+str);
+       System.out.println("details:"+str); //printing details of ebooks
         item.buy();
         String str2=item2.productDetails();
-        System.out.println("details:"+str2);
+       System.out.println("details:"+str2);// printing details of other products
         item2.buy();
      
     }

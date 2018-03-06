@@ -86,23 +86,22 @@ class Item2
 
 }
 
-class amazon1
+class Amazon1
 {
     public static void main(String [] args)
     {
         System.out.println("Product type:1.E-Books 2.Other products 3.Songs");
         Item2 item1=new Item2(1,"book",100,null,"author","abc publications",null,null,null,null,null);
         String str=item1.productDetails();
-        System.out.println("details:"+str);
+       //  printing details of other products stored in str
         item1.buy();
         Item2 item2=new Item2(2,"item",100,"specs",null,null,"grey",null,null,null,null);
         String str2=item2.productDetails();
-        System.out.println("details:"+str2);
+        // printing details of other products stored in str2
         item2.buy();
         Item2 item3=new Item2(3,"song",100,null,null,null,null,"singer","album","language","category");
         String str3=item3.productDetails();
-        System.out.println("details:"+str3);
+       //  printing details of other products stored in str3
         item3.buy();
-            
     }
 }
