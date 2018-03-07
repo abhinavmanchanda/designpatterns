@@ -40,7 +40,7 @@ float paintCostRequired(Shape s)
       
       
 }
- public class Question2 {
+class Solution{
  public static void main(String[] args)
  {
          PaintCostCalculator calculator=new PaintCostCalculator();

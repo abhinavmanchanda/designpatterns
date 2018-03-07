@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Question3f;
 
  class Question3f {
@@ -14,16 +10,16 @@ package Question3f;
     public Question3f(double sideA, double sideB, double sideC) {
         this.sideA = sideA;
         this.sideB = sideB;
-        this.sideC = sideC;
+        this.sideC  = sideC;
     }
-    public Question3f()
+    public Question3f(double sideA, double sideB)
     {
         //for isosceles triangle
-        /*
+        
         this.sideA = sideA;
         this.sideB = sideB;
         this.sideC = sideB;
-        */
+      
     }
   
     public double perimeter() {
@@ -35,13 +31,13 @@ package Question3f;
         return Math.sqrt(halfPerimeter * (halfPerimeter - sideA) * (halfPerimeter - sideB) * (halfPerimeter - sideC));
     }
 }
- class main{
+ class Solution{
     public static void main(String[]args)
       {
         Question3f q=new Question3f(5,3,4);
         System.out.println(q.perimeter());
         System.out.println(q.area());
-        Question3f q=new Question3f(8,5);
+        Question3f q1=new Question3f(8,5);
         System.out.println(q.perimeter());
         System.out.println(q.area());
         

@@ -54,7 +54,7 @@ class Triangle {
         return new Rectangle(s, s);
     }
 }
-class main
+class Solution
 {
     public static void main(String[]args)
     {

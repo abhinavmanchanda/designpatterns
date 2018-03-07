@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Question1;
 
 class PaintCostCalculator{
@@ -45,7 +41,7 @@ class Circle{
        return(float) (3.14*radius*radius); 
     }
 }
-public class Questiton1{
+class Solution{
      public static void main(String[] args)
 	 {
          PaintCostCalculator calculator=new PaintCostCalculator();
