@@ -31,7 +31,7 @@ package Question3f;
         return Math.sqrt(halfPerimeter * (halfPerimeter - sideA) * (halfPerimeter - sideB) * (halfPerimeter - sideC));
     }
 }
- class Solution{
+public class Solution{
     public static void main(String[]args)
       {
         Question3f q=new Question3f(5,3,4);

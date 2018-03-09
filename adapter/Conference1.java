@@ -1,29 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package adapter;
 
+import adapter.Conference;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-public class Conference {
+public class Conference1 {
 
-    ArrayList<Session> sessions;
+    ArrayList<Session1> sessions;
 
-    Conference(ArrayList session) {
+    Conference1(ArrayList session) {
         this.sessions = session;
     }
 
-    public Map returnlist() {
-
+  
+}
+class Adapter
+{
+    Map<String, List<String>> convert(Conference1 conference)
+    {
         Map<String, List<String>> speakerSessionMapping = new HashMap<String, List<String>>();
-        for (Session session : sessions) {
+         
+
+        for (Session1 session : conference.sessions)
+        {
             String sessionName = session.name;
             String speaker = session.speaker;
             if (!speakerSessionMapping.containsKey(speaker)) {
@@ -34,35 +36,39 @@ public class Conference {
         }
         return speakerSessionMapping;
     }
+    
+   
 }
-
-class Display {
+class Display1 {
 
     public static void main(String[] args) {
-        ArrayList<Session> sessions = new ArrayList<>();
+        ArrayList<Session1> sessions = new ArrayList<>();
         Map<String, List<String>> speakerSessionMapping = new HashMap<String, List<String>>();
-        Session s1 = new Session("JS", "AAA", "9am");
-        Session s2 = new Session("AWS", "BBB", "1pm");
-        Session s3 = new Session("JAVA", "AAA", "3pm");
+        Session1 s1 = new Session1("JS", "AAA", "9am");
+        Session1 s2 = new Session1("AWS", "BBB", "1pm");
+        Session1 s3 = new Session1("JAVA", "AAA", "3pm");
 
         sessions.add(s1);
         sessions.add(s2);
         sessions.add(s3);
-        Conference conference = new Conference(sessions);
-        speakerSessionMapping=conference.returnlist();
+        
+        Conference1 conference = new Conference1(sessions);
+               
+        Adapter adapter=new Adapter();
+        speakerSessionMapping=adapter.convert(conference);
          for(Map.Entry m:speakerSessionMapping.entrySet()){  
                 System.out.println(m.getKey()+" "+m.getValue());  
   }  
     }
 }
 
-class Session {
+class Session1 {
 
     String name;
     String time;
     String speaker;
 
-    Session(String name, String speaker, String time) {
+    Session1(String name, String speaker, String time) {
         this.name = name;
         this.speaker = speaker;
         this.time = time;
