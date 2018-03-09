@@ -18,3 +18,5 @@ out/
 /solution/nbproject/private/
 /amazon/nbproject/private/
 /amazon/build/
+
+*.class
