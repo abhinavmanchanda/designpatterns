@@ -1,7 +1,4 @@
 
-package Question4f;
-
-
 
  class Triangle  {
 
