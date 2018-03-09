@@ -1,6 +1,3 @@
-
-package Question1;
-
 class PaintCostCalculator{
 
 float paintCostRequired(Rectangle r)
@@ -41,7 +38,7 @@ class Circle{
        return(float) (3.14*radius*radius); 
     }
 }
-class Solution{
+public class Solution{
      public static void main(String[] args)
 	 {
          PaintCostCalculator calculator=new PaintCostCalculator();
