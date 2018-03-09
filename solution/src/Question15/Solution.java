@@ -1,5 +1,4 @@
 
-package antipattern;
 
 
 import java.util.Scanner;
@@ -98,7 +97,7 @@ class otherproducts extends Product
    }
     
 }
-class amazon3
+public class Solution
 {
     public static void main (String [] args)
     {

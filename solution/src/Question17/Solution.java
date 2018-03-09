@@ -1,4 +1,3 @@
-package adapter;
 
 import adapter.Conference;
 import java.util.ArrayList;
@@ -39,7 +38,7 @@ class Adapter
     
    
 }
-class Display1 {
+public class Solution {
 
     public static void main(String[] args) {
         ArrayList<Session1> sessions = new ArrayList<>();

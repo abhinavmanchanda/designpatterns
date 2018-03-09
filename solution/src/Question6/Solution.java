@@ -1,5 +1,4 @@
 
-
 import java.util.Scanner;
 
 class CalState {
@@ -125,26 +124,16 @@ class CalState {
     }
 }
 
- class Solution {
+ public class Solution {
 
     public static void main(String[] args) {
-     System.out.println("Enter no of rows and colums");
-        Scanner s=new Scanner(System.in);
-        int row=s.nextInt();
-        int col=s.nextInt();
-        System.out.println("Enter the elements of matrix");
+        int row=3;
+        int col=3;
+       
         
             int i,j;
-            int[][] initialState=new int [row][col] ;
-        for(i=0;i<row;i++)
-        {
-            for(j=0;j<col;j++)
-            {
-                initialState[i][j]=s.nextInt();
-            }
-        }
-        System.out.println("Enter the no of steps(generations)");
-	int n=s.nextInt();
+            int[][] initialState={{1,0,1},{0,0,0},{1,1,1}};
+       	int n=1;//no of steps
         CalState state=new CalState(); 
         State gof=new GameOfLife(); 
         State ge=new Game();
