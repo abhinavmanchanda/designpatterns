@@ -1,6 +1,4 @@
-
-package Question2f;
- interface Shape {
+interface Shape {
 
     float area();
     
@@ -40,7 +38,7 @@ float paintCostRequired(Shape s)
       
       
 }
-class Solution{
+public class Solution{
  public static void main(String[] args)
  {
          PaintCostCalculator calculator=new PaintCostCalculator();
