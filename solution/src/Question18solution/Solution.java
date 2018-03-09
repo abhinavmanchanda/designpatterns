@@ -1,17 +1,15 @@
-package adapter;
 
-import adapter.Conference;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-public class Conference1 {
+class Conference1 {
 
     ArrayList<Session1> sessions;
 
-    Conference1(ArrayList session) {
+    Conference1(ArrayList<Session1> session) {
         this.sessions = session;
     }
 
@@ -39,7 +37,7 @@ class Adapter
     
    
 }
-class Display1 {
+public class Solution {
 
     public static void main(String[] args) {
         ArrayList<Session1> sessions = new ArrayList<>();

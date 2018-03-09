@@ -37,8 +37,8 @@ public class Solution{
         System.out.println(q.perimeter());
         System.out.println(q.area());
         Question3f q1=new Question3f(8,5);
-        System.out.println(q.perimeter());
-        System.out.println(q.area());
+        System.out.println(q1.perimeter());
+        System.out.println(q1.area());
         
     }
 }
