@@ -31,7 +31,7 @@ class RightangledTriangle extends Triangle{
     }
 }
    
- class Solution{
+ public class Solution{
     public static void main(String[]args)
       {
         Triangle q=new Triangle(5,3,4);
