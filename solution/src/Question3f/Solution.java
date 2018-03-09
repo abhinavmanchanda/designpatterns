@@ -1,5 +1,4 @@
 
-package Question3f;
 
  class Question3f {
 
