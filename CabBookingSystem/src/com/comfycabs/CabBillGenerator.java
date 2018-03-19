@@ -1,43 +1,37 @@
 package com.comfycabs;
 
+import com.comfycabs.CabBillGenerator.CabType;
+
 public class CabBillGenerator {
 	int distance;
-	String cabType;
+	CabType cabType;
 	int time;
-	int idealTime;
-	public CabBillGenerator(int distance, String cabType,int time) {
+	public CabBillGenerator(int distance, CabType cabType,int time) {
 		this.distance=distance;
 		this.cabType=cabType;
 		this.time=time;
 	}
 
 	public int calculateCost() {
-		if(cabType.equals("Compact"))
-		{
-			idealTime=distance*3;
-			if(time<idealTime)
-			return(distance*10);
-			else
-				return(distance*10+(time-idealTime)*1);
+		int idealTime=distance*3;
+		int timeExceeded=0;
+		
+		if(time>idealTime)
+			timeExceeded = time-idealTime;
+		return (distance*cabType.distanceCost+cabType.timeCost*timeExceeded);
+	}
+	
+	 enum CabType
+	{
+		 COMPACT(10, 1), COMFORT(15,1), LUXURY(20,2), SUV(18,3);
+		 
+		private int distanceCost;
+		private int timeCost;
+		private CabType(int distance, int time) {	
+			this.distanceCost = distance;
+			this.timeCost = time;
 		}
 		
-		if(cabType.equals("Comfort"))
-		{
-			idealTime=distance*3;
-			if(time<idealTime)
-			return(distance*15);
-			else
-				return(distance*15+(time-idealTime)*1);
-		}
-		if(cabType.equals("Luxury"))
-		{
-			idealTime=distance*3;
-			if(time<idealTime)
-			return(distance*20);
-			else
-				return(distance*20+(time-idealTime)*2);
-		}
-		else return 0;
 	}
 	
 
