@@ -1,17 +1,17 @@
 
 
- class Question3f {
+ class Triangle {
 
     private final double sideA;
     private final double sideB;
     private final double sideC;
 
-    public Question3f(double sideA, double sideB, double sideC) {
+    public Triangle(double sideA, double sideB, double sideC) {
         this.sideA = sideA;
         this.sideB = sideB;
         this.sideC  = sideC;
     }
-    public Question3f(double sideA, double sideB)
+    public Triangle(double sideA, double sideB)
     {
         //for isosceles triangle
         
@@ -33,12 +33,12 @@
 public class Solution{
     public static void main(String[]args)
       {
-        Question3f q=new Question3f(5,3,4);
-        System.out.println(q.perimeter());
-        System.out.println(q.area());
-        Question3f q1=new Question3f(8,5);
-        System.out.println(q1.perimeter());
-        System.out.println(q1.area());
+        Triangle triangle1=new Triangle(5,3,4);
+        System.out.println(triangle1.perimeter());
+        System.out.println(triangle1.area());
+        Triangle triangle2=new Triangle(8,5);
+        System.out.println(triangle2.perimeter());
+        System.out.println(triangle2.area());
         
     }
 }

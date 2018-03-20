@@ -31,11 +31,11 @@ class RightangledTriangle extends Triangle{
  public class Solution{
     public static void main(String[]args)
       {
-        Triangle q=new Triangle(5,3,4);
-        System.out.println(q.area());
-        IsocelesTriangle i=new IsocelesTriangle(8,5);
-        System.out.println(i.area());
-        RightangledTriangle r=new RightangledTriangle(4,3);
-        System.out.println(r.area());
+        Triangle triangle=new Triangle(5,3,4);
+        System.out.println(triangle.area());
+        IsocelesTriangle isoceles=new IsocelesTriangle(8,5);
+        System.out.println(isoceles.area());
+        RightangledTriangle rightAngledTriangle=new RightangledTriangle(4,3);
+        System.out.println(rightAngledTriangle.area());
     }
 }
