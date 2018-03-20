@@ -1,12 +1,9 @@
-package com.comfycabs;
-
-
- class CabBillGenerator1 {
+class CabBillGenerator {
 	int distance;
 	String cabType;
 	int time;
 	int idealTime;
-	 CabBillGenerator1(int distance, String cabType,int time) {
+	 CabBillGenerator(int distance, String cabType,int time) {
 		this.distance=distance;
 		this.cabType=cabType;
 		this.time=time;
@@ -38,6 +35,22 @@ package com.comfycabs;
 			else
 				return(distance*20+(time-idealTime)*2);
 		}
+		if(cabType.equals("SUV"))
+		{
+			idealTime=distance*3;
+			if(time<idealTime)
+			return(distance*19);
+			else
+				return(distance*19+(time-idealTime)*2);
+		}
+		if(cabType.equals("Mini-Bus"))
+		{
+			idealTime=distance*3;
+			if(time<idealTime)
+			return(distance*25);
+			else
+				return(distance*25+(time-idealTime)*3);
+		}
 		else return 0;
 	}
 	
@@ -48,20 +61,20 @@ public class Solution
 	public static void main(String[]args)
 	{
 	int bill;
-	CabBillGenerator1 billGenerator=new CabBillGenerator1(10,"Compact", 29);
+	CabBillGenerator billGenerator=new CabBillGenerator(10,"Compact", 29);
 	bill=billGenerator.calculateCost();
 	System.out.println("Your cab fare is:"+bill);
-	CabBillGenerator1 billGenerator1=new CabBillGenerator1(15,"Comfort", 48);
+	CabBillGenerator billGenerator1=new CabBillGenerator(15,"Comfort", 48);
 	bill=billGenerator1.calculateCost();
 	System.out.println("Your cab fare is:"+bill);
-	CabBillGenerator1 billGenerator2=new CabBillGenerator1(20,"Luxury", 65);
+	CabBillGenerator billGenerator2=new CabBillGenerator(20,"Luxury", 65);
 	bill=billGenerator2.calculateCost();
 	System.out.println("Your cab fare is:"+bill);
-	/*CabBillGenerator1 billGenerator3=new CabBillGenerator1(10,"SUV",34);
-	bill=billGenerator2.calculateCost();
+	CabBillGenerator billGenerator3=new CabBillGenerator(10,"SUV",34);
+	bill=billGenerator3.calculateCost();
 	System.out.println("Your cab fare is:"+bill);
-	CabBillGenerator1 billGenerator4=new CabBillGenerator1(20,"Mini-Bus",50);
-	bill=billGenerator2.calculateCost();
-	System.out.println("Your cab fare is:"+bill);*/
+	CabBillGenerator billGenerator4=new CabBillGenerator(20,"Mini-Bus",50);
+	bill=billGenerator4.calculateCost();
+	System.out.println("Your cab fare is:"+bill);
 	}
 }
