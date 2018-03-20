@@ -43,16 +43,17 @@ class Solution
 {
 	 public static void main(String[]args)
 	 {
-		 
-		CheapTicket ticket=new CheapTicket();
+		 CheapTicket ticket=new CheapTicket();
 		 ticket.selectDestinations();
 		 ticket.bookFlight();
-		PremiumTicket ticket1=new PremiumTicket();
-		 ticket1.selectDestinations();
-		 ticket1.bookFlight();
-		 ticket1.selectSeat();
-		 ticket1.selectMeal();
-		 ticket1.selectDrink();
+
+		PremiumTicket ticket=new PremiumTicket();
+		 ticket.selectDestinations();
+		 ticket.bookFlight();
+		 ticket.selectSeat();
+		 ticket.selectMeal();
+		 ticket.selectDrink();
+		
 	 }
 
 }
