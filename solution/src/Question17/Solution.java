@@ -10,11 +10,12 @@ import java.util.Map;
 
     ArrayList<Session> sessions;
 
-    Conference(ArrayList session) {
-        this.sessions = session;
+    Conference(ArrayList<Session> s
+essions) {
+        this.sessions = sessions;
     }
 
-    public Map returnlist() {
+    public Map<String, List<String>> returnlist() {
 
         Map<String, List<String>> speakerSessionMapping = new HashMap<String, List<String>>();
         for (Session session : sessions) {

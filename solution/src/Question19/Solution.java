@@ -1,4 +1,4 @@
-package Ct;
+
 class Ticket
 {
 	int ticketno;
@@ -39,7 +39,7 @@ class CheapTicket
 {
 	
 }
-class main
+class Solution
 {
 	 public static void main(String[]args)
 	 {
