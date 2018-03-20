@@ -1,22 +1,18 @@
 
-import java.util.Scanner;
+class GameEngine {
 
-class CalState {
-
-    private State s;
-
-    CalState() {
-
+    private Strategy strategy;
+    int matrix[][];
+    GameEngine(Strategy strategy, int matrix[][]) {
+        this.strategy = strategy;
+        this.matrix = matrix;
     }
 
-    void setstate(State s) {
-        this.s = s;
-    }
-
-    void calstate(int row,int col,int m[][],int noOfSteps)
+    void calstrategy(int noOfSteps)
     {
+        int row= matrix.length;
+        int col= matrix.length;
         int i = 0, j = 0, k = 0,score=0;
-        CalState c=new CalState();
         int[][] tempMatrix = new int[row][col];
         
         for (k = 0; k < noOfSteps; k++)
@@ -25,8 +21,8 @@ class CalState {
             {
                 for (j = 0; j < col; j++) 
                 {
-                    score=c.calneighbourscore(m,i,j,col);
-                    tempMatrix[i][j] =this.s.nextstate(m[i][j],score);
+                    score=calneighbourscore(i,j);
+                    tempMatrix[i][j] =this.strategy.nextState(matrix[i][j],score);
                   
                 }
             }
@@ -34,48 +30,48 @@ class CalState {
             for (i = 0; i < row; i++) {
                 for (j = 0; j < col; j++)
                 {
-                    m[i][j] = tempMatrix[i][j];
+                    matrix[i][j] = tempMatrix[i][j];
                     tempMatrix[i][j] = 0;
                 }
             }
         }
         
-        c.display(m,row,col);
+        display(matrix,row,col);
        
     }
   
-    int calneighbourscore(int m[][],int row,int col,int n)
+    int calneighbourscore(int row,int col)
     {
        int score=0;
-	int last=n-1;
+	int last=matrix.length-1;
        
 	if(row>0&&col>0)
 	{
-		score+=m[row-1][col-1];
+		score+=matrix[row-1][col-1];
 	}
 	if(row>0)
 	{
-		score+=m[row-1][col];
+		score+=matrix[row-1][col];
 		if(col<last)
-		score+=m[row-1][col+1];
+		score+=matrix[row-1][col+1];
 	}
 	if(col>0)
 	{
-	  score+=m[row][col-1];
+	  score+=matrix[row][col-1];
 		if(row<last)
-		score+=m[row+1][col-1];
+		score+=matrix[row+1][col-1];
 	}
 	if(row<last)
 	{
-		score+=m[row+1][col];
+		score+=matrix[row+1][col];
 	}
 	if(col<last)
 	{
-		score+=m[row][col+1];
+		score+=matrix[row][col+1];
 	}
 	if(row<last&&col<last)
 	{
-		score+=m[row+1][col+1];
+		score+=matrix[row+1][col+1];
 	}
         return score;
     }
@@ -94,8 +90,8 @@ class CalState {
     }
 
 }
- class Game implements State {
-    public int nextstate(int currentState,int score)
+ class PowerGame implements Strategy {
+    public int nextState(int currentState,int score)
     {
        
 	score=score/2;
@@ -107,8 +103,8 @@ class CalState {
 	       
     }
 }
-   class GameOfLife implements State {
-    public int nextstate(int currentState,int score) 
+   class GameOfLife implements Strategy {
+    public int nextState(int currentState,int score) 
     {
       
         if(currentState==1&&score<2)
@@ -124,7 +120,13 @@ class CalState {
     }
 }
 
- public class Solution {
+
+ interface Strategy {
+      public int nextState(int currentState,int score);
+  
+}
+
+public class Solution {
 
     public static void main(String[] args) {
         int row=3;
@@ -134,19 +136,13 @@ class CalState {
             int i,j;
             int[][] initialState={{1,0,1},{0,0,0},{1,1,1}};
        	int n=1;//no of steps
-        CalState state=new CalState(); 
-        State gof=new GameOfLife(); 
-        State ge=new Game();
-        state.setstate(gof);      
-        state.calstate(row,col,initialState,n);
+       	  Strategy gof=new GameOfLife(); 
+        Strategy ge=new PowerGame();
+        GameEngine strategy=new GameEngine(gof,initialState); 
+      
+             
+        strategy.calstrategy(n);
         
     }
     
-}
-
-
- interface State {
-      public int nextstate(int currentState,int score);
-
-   
 }
