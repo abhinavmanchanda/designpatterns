@@ -1,5 +1,3 @@
-package CoffeeShop;
-
 abstract class CaffeineBeverage
 {
 	final void prepareRecipe()
@@ -42,7 +40,7 @@ abstract class CaffeineBeverage
 	{
 		System.out.println("Adding Sugar and Milk");}
 }
- class Main
+ public class Solution
  {
 	 public static void main(String[]args)
 	 {
