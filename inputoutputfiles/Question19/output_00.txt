@@ -1,5 +1,0 @@
-Destinations selected
-Flight booked
-Seat Booked
-Meal Selected
-Drink Selected
